@@ -27,7 +27,7 @@ pipeline {
         sh '''pid=$(cat demo.pid)
 kill -9 $pid'''
         dir(path: 'target') {
-          archiveArtifacts(artifacts: 'demo-0.0.1-SNAPSHOT.jar', onlyIfSuccessful: true)
+          archiveArtifacts(artifacts: 'demo**.jar', onlyIfSuccessful: true)
         }
 
       }
