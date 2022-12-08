@@ -24,7 +24,7 @@ pipeline {
 
     stage('Stop') {
       steps {
-        sh '''pid=$(pgrep -lf java | cut -d \' \' -f 1)
+        sh '''pid=$(pgrep -lf demo | cut -d \' \' -f 1)
 kill -9 $pid'''
         dir(path: 'target') {
           archiveArtifacts(artifacts: 'demo-0.0.1-SNAPSHOT.jar', onlyIfSuccessful: true)
