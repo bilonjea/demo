@@ -17,8 +17,8 @@ pipeline {
 
         stage('ping') {
           steps {
-            sh 'ping http://141.95.165.43/'
             mail(subject: 'Test', body: 'Test jenkins', to: 'j.bilong@gmail.com', mimeType: 'text', from: 'j.bilong@gmail.com')
+            sh 'ping http://141.95.165.43/'
           }
         }
 
