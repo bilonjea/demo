@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh '''pid=$(cat demo.pid)
 kill -9 $pid'''
-        archiveArtifacts(artifacts: 'demo-0.0.1-SNAPSHOT.jar', fingerprint: true)
+        archiveArtifacts(artifacts: 'target/demo-0.0.1-SNAPSHOT.jar', fingerprint: true)
       }
     }
 
