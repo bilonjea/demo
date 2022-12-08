@@ -9,7 +9,7 @@ pipeline {
 
     stage('Run') {
       steps {
-        sh 'java -jar target/**.jar &'
+        sh 'java -jar target/**.jar & echo $! > demo.pid'
       }
     }
 
@@ -24,7 +24,7 @@ pipeline {
 
     stage('Stop') {
       steps {
-        sh '''pid=$(pgrep -lf demo | cut -d \' \' -f 1)
+        sh '''pid=$(cat demo.pid)
 kill -9 $pid'''
         dir(path: 'target') {
           archiveArtifacts(artifacts: 'demo-0.0.1-SNAPSHOT.jar', onlyIfSuccessful: true)
