@@ -46,7 +46,7 @@ kill -9 $pid'''
     }
 
     always {
-      archiveArtifacts(artifacts: 'target/demo-0.0.1-SNAPSHOT.jar', fingerprint: true)
+      archiveArtifacts(artifacts: 'target/demo**.jar', fingerprint: true)
       emailext(to: 'jenkins@bilong.fr', attachLog: true, subject: "Jenkins - ${currentBuild.fullDisplayName} : ${currentBuild.currentResult}", mimeType: 'text/html', body: "<p>Info du <a href='${env.BUILD_URL}'>build<a/> : </p> <ul><li>JOB: '${env.JOB_NAME}'</li><li>N° : '${env.BUILD_NUMBER}'</li></ul>")
     }
 
