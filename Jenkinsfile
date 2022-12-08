@@ -13,9 +13,16 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('Test') {
       steps {
         sh 'curl http://localhost:8080/explorer/index.html'
+      }
+    }
+
+    stage('Stop') {
+      steps {
+        sh '''pid=$(cat demo.pid)
+kill -9 $pid'''
       }
     }
 
