@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        sh './mvnw clean install'
+      parallel {
+        stage('Build') {
+          steps {
+            sh './mvnw clean install'
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'clean install checkstyle:checkstyle pmd:pmd findbugs:findbugs'
+          }
+        }
+
       }
     }
 
