@@ -14,21 +14,9 @@ pipeline {
     }
 
     stage('Test') {
-      parallel {
-        stage('Test') {
-          steps {
-            warnError(message: 'Ping problem') {
-              sh 'curl http://localhost:8080/explorer/index.html'
-            }
-
-          }
-        }
-
-        stage('Test jq') {
-          steps {
-            sleep 60
-            sh 'curl http://localhost:9090/profile'
-          }
+      steps {
+        warnError(message: 'Ping problem') {
+          sh 'curl http://localhost:8080/explorer/index.html'
         }
 
       }
