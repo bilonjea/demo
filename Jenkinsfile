@@ -9,9 +9,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
-            sh 'clean install checkstyle:checkstyle pmd:pmd findbugs:findbugs'
+            sh 'mvn clean install checkstyle:checkstyle pmd:pmd findbugs:findbugs'
           }
         }
 
