@@ -24,6 +24,7 @@ pipeline {
 
     stage('Stop') {
       steps {
+        echo 'Merci'
         sh '''pid=$(cat demo.pid)
 kill -9 $pid'''
         dir(path: 'target') {
