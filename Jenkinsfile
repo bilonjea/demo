@@ -1,22 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh './mvnw clean install'
-          }
-        }
-
-        stage('error') {
+    stage('Quality') {
           steps {
             sh 'mvn clean install checkstyle:checkstyle pmd:pmd findbugs:findbugs'
           }
-        }
-
-      }
     }
+    
+    stage('Build') {
+          steps {
+            sh './mvnw clean install'
+          }
+     }
 
     stage('Run') {
       steps {
