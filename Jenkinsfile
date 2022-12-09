@@ -1,17 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Quality') {
-          steps {
-            sh 'mvn clean install checkstyle:checkstyle pmd:pmd findbugs:findbugs'
-          }
-    }
-    
     stage('Build') {
-          steps {
-            sh './mvnw clean install'
-          }
-     }
+      steps {
+        sh './mvnw clean install'
+      }
+    }
 
     stage('Run') {
       steps {
