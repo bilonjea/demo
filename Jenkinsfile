@@ -27,7 +27,7 @@ pipeline {
         stage('Test jq') {
           steps {
             sleep 60
-            sh 'curl http://localhost:9090/explorer/index.html|jq'
+            sh 'curl http://localhost:9090/profile'
           }
         }
 
