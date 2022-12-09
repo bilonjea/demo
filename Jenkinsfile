@@ -9,7 +9,7 @@ pipeline {
 
     stage('Run') {
       steps {
-        sh 'java -jar target/**.jar & echo $! > demo.pid'
+        sh 'java - jar target/**.jar & echo $! > demo.pid'
       }
     }
 
@@ -47,7 +47,6 @@ kill -9 $pid'''
     }
 
     always {
-      // previous to version 2.0.0 you must provide parameters to this command (see below)!
       jiraSendBuildInfo()
       archiveArtifacts(artifacts: 'target/demo-0.0.1-SNAPSHOT.jar', fingerprint: true)
       emailext(to: 'jenkins@bilong.fr', attachLog: true, subject: "Jenkins - ${currentBuild.fullDisplayName} : ${currentBuild.currentResult}", mimeType: 'text/html', body: "<p>Info du <a href='${env.BUILD_URL}'>build<a/> : </p> <ul><li>JOB: '${env.JOB_NAME}'</li><li>N° : '${env.BUILD_NUMBER}'</li></ul>")
