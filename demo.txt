@@ -1,5 +1,13 @@
-demo.txt
-mvnw
-mvnw.cmd
-pom.xml
-src
+total 56
+drwxr-xr-x 6 bilonjea bilonjea  4096 May 27 01:20 ./
+drwxr-xr-x 3 bilonjea bilonjea  4096 May 27 01:18 ../
+drwxr-xr-x 8 bilonjea bilonjea  4096 May 27 01:20 .git/
+-rw-r--r-- 1 bilonjea bilonjea    38 May 27 01:18 .gitattributes
+-rw-r--r-- 1 bilonjea bilonjea   395 May 27 01:18 .gitignore
+drwxr-xr-x 3 bilonjea bilonjea  4096 May 27 01:18 .mvn/
+-rw-r--r-- 1 bilonjea bilonjea     0 May 27 01:20 demo.txt
+-rwxr-xr-x 1 bilonjea bilonjea 10665 May 27 01:18 mvnw*
+-rw-r--r-- 1 bilonjea bilonjea  7061 May 27 01:18 mvnw.cmd
+-rw-r--r-- 1 bilonjea bilonjea  1578 May 27 01:18 pom.xml
+drwxr-xr-x 4 bilonjea bilonjea  4096 May 27 01:18 src/
+drwxr-xr-x 4 bilonjea bilonjea  4096 May 27 01:20 target/
